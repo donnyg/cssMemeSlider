@@ -56,12 +56,17 @@ body {
 
 .slider__label {
   cursor: pointer;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slider__label:hover {
   .slider__dot {
-    background: lightgray;
+    background: gainsboro;
   }
+}
+
+.slider__label:active {
+  transform: scale(1.5);
 }
 
 .slider__dot {
@@ -69,7 +74,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #3366CC;
+  background: #41a9f1;
   transition: background 0.3s ease-in-out;
 }
 
@@ -109,7 +114,7 @@ body {
 .slider__control:nth-child(1):checked ~ .slider__bottom .slider__label:nth-child(1) .slider__dot,
 .slider__control:nth-child(2):checked ~ .slider__bottom .slider__label:nth-child(2) .slider__dot,
 .slider__control:nth-child(3):checked ~ .slider__bottom .slider__label:nth-child(3) .slider__dot,
-.slider__control:nth-child(4):checked ~ .slider__bottom .slider__label:nth-child(43) .slider__dot {
-  border: 4px solid lightgray;
-  background: rgb(91, 170, 235);
+.slider__control:nth-child(4):checked ~ .slider__bottom .slider__label:nth-child(4) .slider__dot {
+  border: 4px solid rgb(66, 176, 219);
+  background: lightcyan;
 }
