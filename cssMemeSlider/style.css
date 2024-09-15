@@ -14,7 +14,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,6 @@ body {
 
 .slider {
   width: clamp(20rem, 90vw, 60rem);
-  min-height: 33vh;
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
