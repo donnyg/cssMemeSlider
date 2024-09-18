@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-normal: #009999;
+  --color-active: #fff;
+  --color-hover: #33CCCC;
+  --color-border: #009999;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+}
+
+.slider {
+  width: clamp(20rem, 90vw, 60rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  padding: clamp(0.35rem, 5vw, 2rem);
+  border-radius: 1.3rem;
+  background: white;
+  box-shadow: 0px 0px 35px 10px rgb(230, 230, 230);
+}
+
+.slider__top {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.slider__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider__controls {
+  display: flex;
+}
+
+.slider__control {
+  display: none;
+}
+
+.slider__label {
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.slider__label:hover {
+  .slider__dot {
+    background: var(--color-hover);
+  }
+}
+
+.slider__label:active {
+  transform: scale(1.5);
+}
+
+.slider__dot {
+  display: block;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--color-normal);
+  transition: background 0.3s ease-in-out;
+}
+
+.slider__caption {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider__caption p {
+  width: 100%;
+  flex-shrink: 0;
+  font: clamp(1.25rem, 5vw, 2rem)/1.2 "Trebuchet MS", sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+#control1:checked ~ .slider__top .slider__track,
+#control1:checked ~ .slider__bottom .slider__caption p {
+  transform: translateX(0);
+}
+
+#control2:checked ~ .slider__top .slider__track,
+#control2:checked ~ .slider__bottom .slider__caption p {
+  transform: translateX(-100%);
+}
+
+#control3:checked ~ .slider__top .slider__track,
+#control3:checked ~ .slider__bottom .slider__caption p {
+  transform: translateX(-200%);
+}
+
+#control4:checked ~ .slider__top .slider__track,
+#control4:checked ~ .slider__bottom .slider__caption p {
+  transform: translateX(-300%);
+}
+
+.slider__control:nth-child(1):checked ~ .slider__bottom .slider__label:nth-child(1) .slider__dot,
+.slider__control:nth-child(2):checked ~ .slider__bottom .slider__label:nth-child(2) .slider__dot,
+.slider__control:nth-child(3):checked ~ .slider__bottom .slider__label:nth-child(3) .slider__dot,
+.slider__control:nth-child(4):checked ~ .slider__bottom .slider__label:nth-child(4) .slider__dot {
+  border: 0.2rem solid var(--color-border);
+  background: var(--color-active);
+}
+
+@media (max-width: 767px) {
+  .slider__bottom {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .slider__caption {
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+}

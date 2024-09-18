@@ -4,11 +4,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <title>cssMemeSlider</title>
 </head>
 
 <body>
+  <main class="slider">
+    <input class="slider__control" type="radio" name="control" id="control1" checked>
+    <input class="slider__control" type="radio" name="control" id="control2">
+    <input class="slider__control" type="radio" name="control" id="control3">
+    <input class="slider__control" type="radio" name="control" id="control4">
 
+    <div class="slider__top">
+      <div class="slider__track">
+        <img src="./1.jpg" alt="JavaScript meme" class="slider__image">
+        <img src="./2.jpg" alt="JavaScript Everywhere meme" class="slider__image">
+        <img src="./3.webp" alt="What the hell? meme" class="slider__image">
+        <img src="./4.png" alt="JavaScript can be better meme" class="slider__image">
+      </div>
+    </div>
+    <div class="slider__bottom">
+      <div class="slider__caption">
+        <p>JavaScript</p>
+        <p>JavaScript Everywhere</p>
+        <p>What the hell?</p>
+        <p>JavaScript can be better</p>
+      </div>
+      <div class="slider__controls">
+        <label class="slider__label" for="control1"><span class="slider__dot"></span></label>
+        <label class="slider__label" for="control2"><span class="slider__dot"></span></label>
+        <label class="slider__label" for="control3"><span class="slider__dot"></span></label>
+        <label class="slider__label" for="control4"><span class="slider__dot"></span></label>
+      </div>
+    </div>
+  </main>
 </body>
 
 </html>
